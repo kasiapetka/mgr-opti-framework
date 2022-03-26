@@ -1,0 +1,34 @@
+.ProductList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 90%;
+  }
+}
+
+.Loadmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4em 0;
+
+  button {
+    background-color: white;
+    border: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: 0.4s;
+    border: 1px solid #ccc;
+    padding: 1em 4em;
+    border-radius: 60px;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.4s;
+      background-color: #ccc;
+      border: 1px solid black;
+    }
+  }
+}

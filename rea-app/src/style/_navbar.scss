@@ -1,0 +1,21 @@
+.navbar_container {
+  background: #ccc;
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 1em;
+
+    &_col {
+      display: flex;
+      align-items: center;
+      margin: 0 1em;
+    }
+
+    &_span {
+      margin: 0 0 0 1em;
+    }
+  }
+}
