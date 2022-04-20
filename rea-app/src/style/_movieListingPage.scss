@@ -1,0 +1,12 @@
+.MovieListingPage {
+  display: grid;
+
+
+  .MovieListingHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2em 2em;
+  }
+}

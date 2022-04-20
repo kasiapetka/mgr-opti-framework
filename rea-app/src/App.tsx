@@ -1,17 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import { Routes, Route, Link } from "react-router-dom";
 import Homepage from "./components/Homepage";
-import ProductListingPage from "./components/ProductListingPage";
+import MovieListingPage from "./components/MovieListingPage";
+import { MoviesContext } from "./context/movies-context";
+import { ModalContext } from "./context/modal-context";
 
 function App() {
+  const [fetchedMovies, setFetchedMovies] = useState<Array<object>>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/products-list" element={<ProductListingPage />} />
-      </Routes>
+      <ModalContext.Provider value={{ isVisible, setIsVisible }}>
+        <MoviesContext.Provider
+          value={{
+            fetchedMovies,
+            setFetchedMovies,
+            isLoading,
+            setIsLoading,
+          }}
+        >
+          <Header />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/movies-list" element={<MovieListingPage />} />
+          </Routes>
+        </MoviesContext.Provider>
+      </ModalContext.Provider>
     </div>
   );
 }

@@ -5,7 +5,6 @@ const build = (
   queryParams: { [key: string]: any } = {}
 ): string => {
   const urlQueryParams = new URLSearchParams(queryParams);
-
   if (urlQueryParams) {
     return `${url}?${urlQueryParams}`;
   }

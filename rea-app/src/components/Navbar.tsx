@@ -14,11 +14,11 @@ const Navbar = (props: Props) => {
             <img src={logo} alt="" height={50} width={50} />
           </Link>
           <Link to="/">
-            <span className="navbar_span">nazwa projektu</span>
+            <span className="navbar_span">Opti Frame App</span>
           </Link>
         </div>
         <div className="navbar_col">
-          <Link to="/products-list">listing page</Link>
+          <Link to="/movies-list">Movie Listing Page</Link>
         </div>
       </nav>
     </div>

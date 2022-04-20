@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { BsFilter } from "react-icons/bs";
 
-type Props = {};
+type Props = {
+  show: boolean;
+  handleToggle: (toggle: boolean) => void;
+};
 
 const Filter = (props: Props) => {
-  return <div>Filter</div>;
+  const handleFilter = () => {
+    props.handleToggle(!props.show);
+  };
+
+  return (
+    <div className="Filter">
+      <button onClick={handleFilter} type="button">
+        <label>
+          <BsFilter />
+        </label>
+        Filters
+      </button>
+    </div>
+  );
 };
 
 export default Filter;

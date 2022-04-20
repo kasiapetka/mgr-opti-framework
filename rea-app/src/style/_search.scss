@@ -1,0 +1,27 @@
+.Search {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #ffffff, #ece9e6);
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  span {
+    padding: 0.75em 1em;
+    cursor: pointer;
+  }
+
+  input {
+    background: linear-gradient(to right, #ffffff, #ece9e6);
+    border-radius: 20px 0 0 20px;
+    border: none;
+    margin: 0;
+    padding: 1em 1em;
+    transition: 0.5s;
+
+    &:focus {
+      transition: 0.5s;
+    }
+    &:hover {
+      transition: 0.5s;
+    }
+  }
+}
