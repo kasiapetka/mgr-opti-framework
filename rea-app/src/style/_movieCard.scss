@@ -1,11 +1,11 @@
 .MovieCard {
-  border: 1px solid #ccc;
+  border: 1px solid $tertiary;
   margin: 1em 1em;
   overflow: hidden;
+  width: 350px;
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
-  background: #ece9e6;
-  background: linear-gradient(to right, #ffffff, #ece9e6);
+  background: $primary;
 
   .MovieCardBody {
     padding: 0.2rem 1rem;
@@ -30,10 +30,10 @@
       align-self: flex-start;
       padding: 0.25em 0.75em;
       border-radius: 1em;
-      font-size: 0.75rem;
-      background: #56ccf2;
-      background: linear-gradient(to bottom, #2f80ed, #56ccf2);
-      color: #fafafa;
+      font-size: 0.8rem;
+      background: $secondary;
+      color: #ffffff;
+      border: 1px solid $secondary;
     }
 
     .MovieCardTag + .MovieCardTag {
@@ -50,6 +50,10 @@
     display: flex;
     padding: 0 1rem;
     margin-top: auto;
+  }
+
+  .MovieCardHeader {
+    padding: 1rem 0;
   }
 
   img {

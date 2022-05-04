@@ -1,0 +1,60 @@
+.navbar_container {
+  background: $primary;
+  height: 5rem;
+  display: flex;
+  border-bottom: 1px solid $tertiary;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    height: 8rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 1em;
+
+    &_col {
+      display: flex;
+      align-items: center;
+      margin: 0 1em;
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: 0.2s;
+        margin-right: 1rem;
+        margin-left: 3rem;
+        &:hover {
+          color: $secondary;
+          transition: 0.2s;
+        }
+      }
+    }
+
+    &_span {
+      margin: 0 0 0 1em;
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+      &_col {
+        flex-direction: column;
+        a {
+          margin: 0.7rem 0 0.2rem 0;
+
+          &:first-child {
+            margin: 0 0 0.2rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar_container.navbar_hero {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+}

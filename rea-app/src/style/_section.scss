@@ -1,0 +1,159 @@
+.section {
+  padding: 5rem;
+  background-color: black;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    padding: 1rem;
+  }
+
+  &_hero {
+    height: 90vh;
+
+    .hero {
+      &_text {
+        margin-top: 5rem;
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        grid-template-rows: repeat(2, 0.5fr);
+        h1 {
+          font-size: 74px;
+          font-weight: 700;
+        }
+
+        h2 {
+          font-size: 44px;
+        }
+      }
+      &_assets {
+        display: grid;
+        justify-content: center;
+      }
+    }
+  }
+
+  &_featured {
+    h2 {
+      color: black;
+      font-size: 44px;
+      font-weight: 500;
+      text-align: center;
+    }
+    .featured {
+      display: grid;
+      padding: 2rem 0;
+      text-align: center;
+      grid-template-columns: repeat(15, 1fr);
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: black;
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #dfdfdf;
+        border-radius: 10px;
+      }
+    }
+  }
+  &_paragraph {
+    .paragraph {
+      &_text {
+        margin-top: 1rem;
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        text-align: justify;
+        grid-template-rows: repeat(2, 0.5fr);
+        h1 {
+          font-size: 25px;
+          font-weight: 700;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+      &_assets {
+        display: grid;
+        justify-content: center;
+      }
+    }
+  }
+  &_newsletter {
+    h2 {
+      font-size: 44px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 26px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .newsletter {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      justify-content: center;
+
+      &_form {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 25px;
+      }
+
+      button {
+        margin: 0 2em;
+        color: white;
+        padding: 0.5em 1.5em;
+        border: 1px solid white;
+        border-radius: 20px;
+        font-weight: 600;
+
+        cursor: pointer;
+        background: black;
+        transition: 0.2s;
+      }
+      button:hover {
+        background-color: white;
+        color: black;
+        transition: 0.2s;
+      }
+
+      input {
+        background: white;
+        color: black;
+        padding: 0.5em 1.5em;
+        border: 1px solid $secondary;
+        border-radius: 20px;
+        font-weight: 500;
+
+        &:focus {
+          transition: 0.2s;
+          outline: none;
+          box-shadow: 0 0 0 3px $tertiary;
+        }
+
+        &::placeholder {
+          color: black;
+        }
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: white;
+    padding: 5rem;
+    @media (min-width: 320px) and (max-width: 767px) {
+      padding: 1rem 0.2rem;
+    }
+  }
+}

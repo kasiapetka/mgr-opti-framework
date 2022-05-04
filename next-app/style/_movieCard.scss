@@ -1,0 +1,63 @@
+.MovieCard {
+  border: 1px solid $tertiary;
+  margin: 1em 1em;
+  width: 350px;
+  overflow: hidden;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: $primary;
+
+  .MovieCardBody {
+    padding: 0.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h4,
+    p {
+      margin: 0.2rem;
+    }
+    p {
+      text-align: left;
+    }
+
+    .MovieCardTags {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .MovieCardTag {
+      align-self: flex-start;
+      padding: 0.25em 0.75em;
+      border-radius: 1em;
+      font-size: 0.8rem;
+      background: $secondary;
+      color: #ffffff;
+      border: 1px solid $secondary;
+    }
+
+    .MovieCardTag + .MovieCardTag {
+      margin-left: 0.5em;
+    }
+
+    .MovieCardCaptionsBold {
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+
+  .MovieCardFooter {
+    display: flex;
+    padding: 0 1rem;
+    margin-top: auto;
+  }
+
+  .MovieCardHeader {
+    padding: 1rem 0;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

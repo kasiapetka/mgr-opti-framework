@@ -24,17 +24,18 @@ const MovieListingPageFilters = (props: Props) => {
 
   const handleFilterByGenre = (genres: string[]) => {
     setSelectedGenres(genres);
-    api
-      .get("/movies", {
-        genres: JSON.stringify([...genres]),
-      })
-      .then((data) => setFetchedMovies(data.movies));
-
-    console.log(selectedGenres);
+    if (genres?.length === 0) {
+      api.get("/movies").then((data) => setFetchedMovies(data.movies));
+    } else {
+      api
+        .get("/movies", {
+          genres: JSON.stringify([...genres]),
+        })
+        .then((data) => setFetchedMovies(data.movies));
+    }
   };
 
   const handleSearch = (keyword: string) => {
-    console.log(keyword);
     api
       .get("/movies", {
         keyword: keyword,

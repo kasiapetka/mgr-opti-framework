@@ -12,6 +12,7 @@ const MovieList = (props: Props) => {
   const [isMounted, setIsMounted] = useState(false);
   const { fetchedMovies, setFetchedMovies, isLoading, setIsLoading } =
     useMoviesContext();
+  const [count, setCount] = useState(LIMIT_MOVIES_PER_LOAD * 2 + 1);
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,6 +31,7 @@ const MovieList = (props: Props) => {
           skip: moviesLoaded,
         })
         .then((data) => {
+          setCount(data.count);
           setFetchedMovies([...fetchedMovies, ...data.movies]);
         });
       setIsMounted(false);
@@ -53,7 +55,9 @@ const MovieList = (props: Props) => {
         )) || <p>Couldn't load the data... :(</p>}
       </div>
       <div className="Loadmore">
-        <button onClick={handleLoadMore}>Show more</button>
+        {moviesLoaded + LIMIT_MOVIES_PER_LOAD >= count ? null : (
+          <button onClick={handleLoadMore}>Show more</button>
+        )}
       </div>
     </React.Fragment>
   );

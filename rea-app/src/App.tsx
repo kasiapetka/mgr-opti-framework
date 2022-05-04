@@ -25,7 +25,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/movies-list" element={<MovieListingPage />} />
+            <Route path="/movies" element={<MovieListingPage />} />
           </Routes>
         </MoviesContext.Provider>
       </ModalContext.Provider>
